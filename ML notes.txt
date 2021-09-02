@@ -1,0 +1,177 @@
+Feature selection 
+1) feature selection chi(univariate feature selection)
+2) wrappers
+
+randomforest - what are the best features
+
+forward selection
+backward selection
+mixed selection
+
+forward selection: 
+f1- 88% 
+f2: f1+f2: 89% -> consider this 
+f3: f1+f2+f3-> 81% ->dont take f3
+
+
+
+backward select :
+
+start with 
+f1+f2+f3
+remove f3 
+and go on ..
+
+
+mixed selection :
+All combinations 
+
+
+--------------------
+test split problems :
+
+k-fold solves all the problems 
+
+of utilizing all the data for training 
+
+test startified 
+
+
+iteration 1: 1 part testing : 2-10 trainins
+model 1: --accuracy 1
+iteration 2: 2nd part testing : 1& 3-10 training
+model 2: accuracy2
+
+....
+
+iteration 11: mean(accuracy1...accuracy10)
+final model with all data
+
+
+-------------
+model building
+
+-------------
+Linear regression = predicting a number
+
+
+o/p LR is equation  which predicts a number 
+
+
+linearity and non linearity 
+
+LR considers everything to be linear
+
+
+simple linear regression
+
+multiple linear regression
+
+
+residual : the distance between the points in the 
+two dim space to the point on the st.line 
+
+
+sum of squares of residuals=some number this should be small(SS fit)
+  
+  
+===================================
+
+
+  R2 : If i were to use a particular variable to explain the target , how well it explains 
+  
+pre-test: given to ppl just to check what they know
+
+
+run the course
+
+
+post-test: 
+
+
+what is the impact of training  (pre test,post test)
+
+ 
+Variablity in the target prior to using any independent variable 
+
+fit our st.line using one variable
+
+how much of a variablity in the target
+
+
+R2 ranges from 0 to 1 
+
+1 perfect explanation of the target
+
+0 means waste feature
+
+
+Mean absolute error 
+if expected is 25000 and model predicted 23000(Difference 2000)
+if expected is 26000 and model predicted 27000(Difference 1000)
+
+mean(2000,1000)
+1,500
+
+If you were to use the model there could be a+ / 1500 error in the predections 
+
+RMSE 
+root mean squared error 
+
+
+Dummy variable trap:
+
+
+auto correlation:
+each rows are independent 
+
+if the rows are cumulative(rows are related)
+
+
+Durban Watson 
+
+take cuurent recored - previous record / current record 
+
+gives u correlation: o/p comes around 1 to 4 
+  
+
+between 0,2 positive correlation
+between 2,4 negative correlation
+d=2 no autocorrelation
+
+
+dont use Lnear regression if its positive correlation
+
+
+
+=======================================================
+
+Scaling
+ 1) min max transform 
+ 2) Z transform
+
+Imbalance Data - SMOTE /NearMiss
+residuals- normality 
+==========================================================
+each feature is in different scale 
+for eg house rate predection 
+1000 sq ft, 10 rooms ,10kms from school all different scales
+
+
+so we have to do scaling:
+
+so do min max scaling
+
+(xi-xmin)/(xmax-xmin)
+
+sklearn.preprocessing.MinMaxScaling
+sklearn.preprocessing.scale
+
+u are only scaling features not target 
+
+=======================================
+model performance tuning
+=============================
+polynomial feature 
+=========
+  
